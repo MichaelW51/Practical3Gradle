@@ -19,7 +19,6 @@
 package triangle.treeDrawer;
 
 import java.awt.FontMetrics;
-
 import triangle.abstractSyntaxTrees.Program;
 import triangle.abstractSyntaxTrees.actuals.ConstActualParameter;
 import triangle.abstractSyntaxTrees.actuals.EmptyActualParameterSequence;
@@ -37,6 +36,7 @@ import triangle.abstractSyntaxTrees.commands.CallCommand;
 import triangle.abstractSyntaxTrees.commands.EmptyCommand;
 import triangle.abstractSyntaxTrees.commands.IfCommand;
 import triangle.abstractSyntaxTrees.commands.LetCommand;
+import triangle.abstractSyntaxTrees.commands.RepeatCommand;
 import triangle.abstractSyntaxTrees.commands.SequentialCommand;
 import triangle.abstractSyntaxTrees.commands.WhileCommand;
 import triangle.abstractSyntaxTrees.declarations.BinaryOperatorDeclaration;
@@ -114,6 +114,7 @@ public class LayoutVisitor implements ActualParameterVisitor<Void, DrawingTree>,
 		this.fontMetrics = fontMetrics;
 	}
 
+
 	// Commands
 	@Override
 	public DrawingTree visitAssignCommand(AssignCommand ast, Void obj) {
@@ -162,6 +163,11 @@ public class LayoutVisitor implements ActualParameterVisitor<Void, DrawingTree>,
 		var d2 = ast.C.visit(this);
 		return layoutBinary("WhileCom.", d1, d2);
 	}
+
+    @Override
+    public Void visitRepeatCommand(RepeatCommand ast, Frame frame) {
+        return null;
+    }
 
 	// Expressions
 	@Override
