@@ -20,7 +20,7 @@ public class NumberTools {
     protected String values = "1,2,3";
 	
 	public static void main(String[] args) {
-	    NumberTools numberTools = new NumberTools();
+	    NumberTools numberTools = new NumberTools()
 	    
 	    // this will parse the list of arguments passed into the program, and
 	    // populate the appropriate instance variables
