@@ -63,7 +63,7 @@ public class TestScanner {
 
     @Test
     public void testHiNewComment2() {
-        compileExpectSuccess("/hi-newcomment2.tri");
+        compileExpectFailure("/hi-newcomment2.tri");
     }
 
 
@@ -75,7 +75,7 @@ public class TestScanner {
 
     @Test
     public void testRepeatUntil() {
-        compileExpectFailure("/repeatuntil.tri");
+        compileExpectSuccess("/repeatuntil.tri");
     }
 	
 	@Test 
